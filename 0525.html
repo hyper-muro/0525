@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+    class Myfriend {
+      //プロパティの参照時に呼び出されるメソッド getter
+      get from() {
+        return this._from;
+      }
+
+      //プロパティの代入時に呼び出されるメソッド setter
+      set from(value) {
+        this._from = value;
+      }
+
+      //-----------------------------------------------------------------------//
+      //
+      // プロパティ名にアンダースコアをつけるとアクセサプロパティを示す。
+      // アクセサプロパティとは値を持たず、外部からアクセスするためのプロパティのこと。
+      // getterやsetterを通さないとプロパティの値を参照したり代入したりできない。
+      //
+      //------------------------------------------------------------------------//
+
+      //静的なメソッド
+      static nobita() {
+        console.log('君はどこからきたの？');
+      }
+    }
+
+    const doraemon = new Myfriend();
+    doraemon.from = '21世紀の未来からさ！';
+
+    Myfriend.nobita();
+    console.log(doraemon.from);
+  </script>
+</body>
+</html>
